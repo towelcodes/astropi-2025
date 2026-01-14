@@ -1,12 +1,10 @@
 from astro_pi_orbit import ISS
 import time
 
-iss = ISS()
+def getPointData():
+    iss = ISS()
 
-point = iss.coordinates()
-coordinates = (point.latitude.radians, point.longitude.radians)
-print(coordinates)
-elevation = point.elevation.km
-print(elevation)
+    point = iss.coordinates()
+    return point.latitude.radians, point.longitude.radians, point.elevation.km
 
-radius = elevation+6,371
+print(getPointData())
